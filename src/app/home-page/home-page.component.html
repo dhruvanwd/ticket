@@ -1,0 +1,39 @@
+<div>
+  <nav class="navbar navbar-dark bg-secondary navbar-expand-md mat-elevation-z1">
+    <!-- Navbar content -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [routerLink]="['/home']" routerLinkActive="active">
+          <a class="nav-link">Tickets</a>
+        </li>
+        <li class="nav-item" [routerLink]="['/home/add-ticket']" routerLinkActive="active">
+          <a class="nav-link">New Ticket</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Reports</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" (click)="showDropDown = !showDropDown" id="navbardrop"
+            data-toggle="dropdown">
+            Admin
+          </a>
+          <div [class.disp]="showDropDown" class="dropdown-menu">
+            <a class="dropdown-item" (click)="showDropDown = false" [routerLink]="['/home/contact-form']">Add
+              Contact</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+          </div>
+        </li>
+        <li class="nav-item" [routerLink]="['/home/contacts']" routerLinkActive="active">
+          <a class="nav-link">Contacts</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
